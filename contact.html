@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+     <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="96x96" />
+      <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="Career.html">Career Goals</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <div class="contacts">
+        <div class="contact_me">
+            <h3>CONTACT ME</h3>
+            <form action="#">
+                <div class="form_group">
+                    <label for="full-name">Name:</label>
+                    <input type="text" id="full-name" name="name" required>
+                  </div>
+                  <div class="form_group">
+                    <label for="email-address">Email:</label>
+                    <input type="email" id="email-address" name="email" required>
+                  </div>
+                
+                  <div class="form_group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject">
+                  </div>
+                
+                  <div class="form_group">
+                    <label for="content">Message:</label>
+                    <textarea id="content" name="message" rows="5"></textarea>
+                  </div>
+                  <div class="form_group purpose">
+                    <label for="purpose">Purpose for message:</label>
+                    <label for="client">Client</label>
+                    <input type="radio" name="purpose" value="client" id="client"> 
+                     <label for="education">Education</label>
+                    <input type="radio" name="purpose" value="education" id="education"> 
+                    <label for="enquiry">Enquiry</label>
+                    <input type="radio" name="purpose" value="enquiry" id="enquiry"> 
+                    <label for="other">Other</label>
+                    <input type="radio" name="purpose" value="other" id="other"> 
+                  </div>
+                  <button type="submit">Send Message</button>
+            </form>
+
+        </div>
+        <div class="contact_detail">
+            <h3>Contact Details</h3>
+            <p>Email: <a href="i250644@isb.nu.edu.pk">i250644@isb.nu.edu.pk</a></p>
+            <p>Phone: +92 3324472314</p>
+        </div>
+    </div>
+
+
+
+    
+    
+    <footer>
+        <p>@FahadAFridi. All Rights Reserved;
+        </p>
+        <p><a href="https://www.linkedin.com/in/m-fahad-afridi-b191a1326/">linkedin</a> |
+        <a href="github.com">gitub</a> | 
+        <a href="contact.html">contact me</a></p>
+    </footer>
+
+
+
+    <script>
+        // 1. Select the form element from the DOM
+        const form = document.querySelector('form');
+    
+        // 2. Add an event listener for the "submit" event
+        form.addEventListener('submit', function(event) {
+            
+            // Prevent the form from refreshing the page immediately
+            event.preventDefault();
+    
+            // 3. Select the input elements
+            const nameInput = document.getElementById('full-name');
+            const emailInput = document.getElementById('email-address');
+            const messageInput = document.getElementById('content');
+    
+            // 4. Get the values from the inputs
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const message = messageInput.value.trim();
+    
+            // i. Check if Name is empty
+            if (name === "") {
+                alert("Please enter your name.");
+                return; // Stop the function here if invalid
+            }
+    
+            // ii. Check if Email has an '@' character
+            if (!email.includes('@')) {
+                alert("Please enter a valid email address containing an '@'.");
+                return;
+            }
+    
+            // iii. Check if Message is at least 10 characters long
+            if (message.length < 10) {
+                alert("Please write a message that is at least 10 characters long.");
+                return;
+            }
+            alert("Thanks! Your response has been recorded.");
+    
+            form.reset();
+        });
+    </script>
+</body>
+</html>
